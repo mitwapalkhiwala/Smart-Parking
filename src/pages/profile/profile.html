@@ -1,0 +1,48 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-img width=60 height=60 src="assets/icon/marker.png"></ion-img>
+	<ion-icon name="camera"></ion-icon><button ion-button (click)="getCamera()">Take Photo</button>
+	<form [formGroup]="form2" (ngSubmit)="onSubmit()">  
+	<ion-item>
+		<!-- <ion-img [width]="imgWidth" [height]="imgHeight" src=""></ion-img>	 -->
+		
+	</ion-item>
+	<ion-item>  
+	    <ion-label color="primary" stacked>Username: </ion-label>  
+	    <ion-input [(ngModel)]="username" placeholder="Username" formControlName="uname"></ion-input>  	       
+	</ion-item>  
+	<span style="color:red" *ngIf="unamenull">*Username is required</span>  
+	<ion-item>  
+	    <ion-label color="primary" stacked>E-mail: </ion-label>  
+	    <ion-input [(ngModel)]="emailid" placeholder="Email ID" formControlName="email"></ion-input>  	       
+	</ion-item>  
+	<span style="color:red" *ngIf="emailnull">*E-mail is required</span>  
+	<span style="color:red" *ngIf="emailtrig">*Enter valid Email address</span>  
+	<span style="color:red" *ngIf="emailsame">*Email ID already exists</span>  
+	
+	<ion-item *ngIf="pwdchng">  
+	    <ion-label color="primary" stacked>Password: </ion-label>  
+	    <ion-input [(ngModel)]="password" placeholder="Change Password" formControlName="pwd" type="password"></ion-input>  
+	</ion-item>  
+	<span style="color:red" *ngIf="passnull">*Password is required</span>  
+	<span style="color:red" *ngIf="dataFetchErr">*Data not loaded</span>
+	<br>
+	<br>  
+	<button ion-button type="submit">Update Profile</button>    
+	</form>  
+	<button ion-button (click)="changepwd()">Change Password</button>
+</ion-content>

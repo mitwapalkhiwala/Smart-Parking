@@ -1,0 +1,24 @@
+
+<ion-header> 
+  <ion-navbar color=primary>
+    <ion-title>DetailPage</ion-title>
+    <button ion-button menuToggle>  
+      <ion-icon name="menu"></ion-icon>  
+    </button> 
+
+    </ion-navbar>
+</ion-header>
+
+ 
+ 
+<ion-content padding class="info"> 
+<h2>This is the detail page for the selected location. Details are as follow:</h2> 
+<br> 
+     <!-- <h2><a href (click)="backHome()">Back to home</a></h2>  -->
+     <h5>Name of parking spot is <b><i>{{name}}</i></b></h5>
+     <h6>Address of parking is <b><i>{{address}}</i></b></h6> 
+     <h6>Parking Rate is <b><i>${{price}}</i></b></h6>
+     <h6>Available parking slots are <b><i>{{placedata}}</i></b></h6>
+     <p> Latitude is <b><i>{{lat}}</i></b>  and Longitude is <b><i>{{lng}}</i></b> </p> 
+
+</ion-content>  

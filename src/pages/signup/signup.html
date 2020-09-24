@@ -1,0 +1,41 @@
+<!--  
+  Generated template for the SignupPage page.  
+  
+  See http://ionicframework.com/docs/components/#navigation for more info on  
+  Ionic pages and navigation.  
+-->  
+<ion-header>  
+  
+  <ion-navbar>  
+    <ion-title>signup</ion-title>  
+  </ion-navbar>  
+  
+</ion-header>  
+  
+  
+<ion-content padding>  
+     <form [formGroup]="form" (ngSubmit)="onSubmit()">  
+     <ion-item>  
+          <ion-label color="primary" stacked>Username: </ion-label>  
+         <ion-input  placeholder="Username" formControlName="uname"></ion-input>  
+           
+     </ion-item>  
+     <span style="color:red" *ngIf="erroruser">*Username is required</span>  
+     <ion-item>  
+          <ion-label color="primary" stacked>E-mail: </ion-label>  
+         <ion-input  placeholder="Email ID" formControlName="email"></ion-input>  
+           
+     </ion-item>  
+     <span style="color:red" *ngIf="erroremail">*E-mail is required</span>  
+     <span style="color:red" *ngIf="notemail">*Enter a valid e-mail address</span>  
+     <span style="color:red" *ngIf="alreadymail">*Email ID already exists</span>  
+     <ion-item>  
+          <ion-label color="primary" stacked>Password: </ion-label>  
+       <ion-input placeholder="Password" formControlName="pwd" type="password"></ion-input>  
+     </ion-item>  
+     <span style="color:red" *ngIf="errorpwd">*Password is required</span>  
+     <br>  
+     <button ion-button type="submit">Signup</button>  
+     <!-- <h5><b *ngIf="trig1">User id is <i>{{uid}} </i></b></h5> -->  
+     </form>  
+</ion-content>

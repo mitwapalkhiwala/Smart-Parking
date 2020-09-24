@@ -1,0 +1,76 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+  <button ion-button menuToggle *ngIf="trigger_login">  
+    <ion-icon name="menu"></ion-icon>  
+  </button> 
+  <ion-title>Login Page</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+<h6>Please log in to Facebook</h6>
+<button ion-button *ngIf="trig2" (click)= loginfb()> Login</button>
+<button ion-button *ngIf="trig1" (click)= logoutfb()> Logout</button>
+<button ion-button (click)= getStatus()> Check Log Status</button>
+<p *ngIf="fbtrig">successful login</p>
+<br><br>
+<hr>
+
+<!-- <h6>or Signup for IONIC application</h6>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<ion-item>
+  <ion-label color="primary" stacked>Username: </ion-label>
+    <ion-input  placeholder="Username" formControlName="uname" (input)="getUser($event.target.value)"></ion-input>
+    
+</ion-item>
+<span style="color:red" *ngIf="erroruser">*Username is required</span>
+<span style="color:red" *ngIf="sameuser">*Username is already taken</span>
+<ion-item>
+  <ion-label color="primary" stacked>Password: </ion-label>
+  <ion-input placeholder="Password" formControlName="pwd" type="password" (input)="getPwd($event.target.value)"></ion-input>
+</ion-item>
+<span style="color:red" *ngIf="errorpwd">*Password is required</span>
+<br>
+<button ion-button type="submit" >Signup</button>
+</form>
+<hr> -->
+
+<h6>or Login for IONIC application</h6>
+
+
+<form [formGroup]="form1" (ngSubmit)="onSubmit1()">
+<ion-item>
+  <ion-label color="primary" stacked>Email ID: </ion-label>
+  <ion-input  placeholder="Enter your email" formControlName="mail" ></ion-input>   
+</ion-item>
+<span style="color:red" *ngIf="errormail">*Email is required</span>
+<span style="color:red" *ngIf="invalidEmailAddress">*Enter valid email address</span>
+<ion-item>
+  <ion-label color="primary" stacked>Password: </ion-label>
+  <ion-input placeholder="Enter your Password" formControlName="pwd1" type="password"></ion-input>
+</ion-item>
+<span style="color:red" *ngIf="errorpwd1">*Password is required</span>
+<span style="color:red" *ngIf="errormailpass">*Email and Password do not match</span>
+<br>
+<br>
+<div>
+<button ion-button type="submit">Login</button></div>
+<!-- <h5><b *ngIf="trig1">User id is <i>{{uid}} </i></b></h5> -->
+</form>
+
+<br>
+
+<b>Not a member? </b><u><a (click)="gotosignup()"><b>Signup For Application</b></a></u>
+<button (click)="getdata()">login fake</button>
+<!-- <button ion-button (click)="clearArray()">Clear </button> -->
+<!-- <p>value of trig1 is {{trig1}} trig2 is {{trig2}} trigger_value is {{trigger_login}}</p> -->
+</ion-content>

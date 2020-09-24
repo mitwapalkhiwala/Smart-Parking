@@ -1,0 +1,19 @@
+<ion-header>   
+<ion-navbar>  
+<button ion-button menuToggle>  
+     <ion-icon name="menu"></ion-icon>  
+</button> 
+</ion-navbar> 
+</ion-header> 
+ 
+<ion-content padding> 
+<button ion-button icon-left round full (click) = "removeHistory()">  
+     Remove History 
+</button>  
+<ion-list> 
+<ion-item id = "list"  *ngFor="let place of places"> 
+<strong><h2>{{ place.date }} {{ place.time }}</h2> 
+     <p >{{ place.house }}, {{ place.street }}, {{ place.district }}</p><p>{{ place.city }}, {{ place.country }}</p></strong> 
+</ion-item> 
+</ion-list>  
+</ion-content>  

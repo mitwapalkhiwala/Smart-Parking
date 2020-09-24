@@ -1,0 +1,32 @@
+<ion-header> 
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+<ion-searchbar ion-col col-12 (ionInput)="getItems($event)" (ionCancel) ="onCancelSearchbar($event)" [ngModel]="search_term"></ion-searchbar>
+</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>   
+<div class="list_val">  
+  
+  
+    <div *ngFor="let item of places" no-lines>  
+    <a class="item item-text-wrap" (click)="getMarkerAt(item.lat,item.lng,item.location_name,item.address)" > 
+     <button ion-item *ngIf="trig" ><strong> {{ item.location_name }} </strong></button> </a> 
+      </div>
+</div>    
+<div ion-col col-12 #map id="map"></div>  
+
+<button ion-button icon-left round full (click) = "saveLocation()">
+  <ion-icon name="car"></ion-icon>
+  Save my Parking Spot
+</button>
+
+<button ion-button icon-left round full (click) = "showLocation()">
+  <ion-icon name="search"></ion-icon>
+ Show my Parking Spot
+</button>
+
+</ion-content>
